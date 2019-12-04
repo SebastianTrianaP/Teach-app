@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 style="text-align: center;">Administrador del sistema</h1>
+        <h2 style="text-align: center;">Usuarios</h2>
+        <div class="custom-padding">
+            <nav>
+                <ul class="menu-area">
+                    <li><a  [routerLink]="['/administrador/menu']">Menú administrador</a></li>
+                    <li><a  [routerLink]="['/administrador/crear-usuario']">Crear nuevo usuario</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="box">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Contraseña</th>
+                        <th>Rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios">
+                        <td>
+                            <a [routerLink]="['/administrador/ver-usuario']" [queryParams]="{id: usuario.id}" >{{usuario.email}}</a>
+                        </td>
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.apellidos}}</td>
+                        <td>{{usuario.contra}}</td>
+                        <td>{{usuario.rol}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

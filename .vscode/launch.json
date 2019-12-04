@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ProyectoApplication",
+            "request": "launch",
+            "mainClass": "com.proyecto.proyecto.ProyectoApplication",
+            "projectName": "proyectoSemestral"
+        }
+    ]
+}

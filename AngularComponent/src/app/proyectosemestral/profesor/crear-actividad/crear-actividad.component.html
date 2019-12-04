@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <div>
+            <h1 style="text-align: center;">Crear nuevo actividad</h1>
+            <form class="box" >
+                <label for="txtTitulo">Titulo: </label>
+                <input type="text" placeholder="Ingrese el titulo" id="txtTitulo" name="titulo" [(ngModel)]="titulo" required>
+                <label for="txtDescripcion">Descripción: </label>
+                <input type="text" placeholder="Ingrese la descripción" id="txtDescripcion" name="descripcion" [(ngModel)]="descripcion" required>
+                <label >Fecha: </label>
+                <input type="date" name="fecha" [(ngModel)]="fechaEntrega" required>
+                <button type="button" (click)="crearActividad()">Crear nueva actividad</button>
+                <button [routerLink]="['/profesor/listar-actividades']" [queryParams]="{id: curso.id}" type="button">Cancelar</button>
+            </form>
+        </div>
+    </body>
+</html>

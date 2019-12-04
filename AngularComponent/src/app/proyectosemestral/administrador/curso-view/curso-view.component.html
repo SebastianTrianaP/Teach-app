@@ -1,0 +1,50 @@
+<html>
+    <body>
+        <h1 style="text-align: center;">Administrador del sistema</h1>
+        <h2 style="text-align: center;">Curso</h2>
+        <div class="custom-padding">
+                <nav>
+                    <ul class="menu-area">
+                        <li><a  [routerLink]="['/administrador/listar-cursos']">Lista</a></li>
+                        <li><a  [routerLink]="['/administrador/modificar-curso']" [queryParams]="{id: curso.id}">Modificar curso</a></li>   <!--, employee.id]-->
+                        <li (click) = "eliminarCurso()" ><a>Eliminar curso</a></li>
+                    </ul>
+                </nav>
+            </div>
+        <div class="box">
+                <!--<img style="display:block; margin:auto;"
+                src="assets/icons/waiting.gif"
+                alt="Please wait..."
+                *ngIf="!(employee && employee.id)"
+                /> -->
+            <div > <!-- *ngIf="employee && employee.id" -->
+                <table class="tabla">
+                    <tr>
+                        <th scope="row">Codigo</th>
+                        <td>{{curso.id}} </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre</th>
+                        <td>{{curso.nombre}}</td>
+                    </tr>
+                </table>
+                <br>
+                <h2>Profesores: </h2>
+                <br>
+                <select id=listprofesores data-placeholder="Escoja los profesores..." style="width:350px; height: 60px; display:block; margin:auto;" multiple tabindex="2">
+                    <option value="" *ngFor="let profesor of curso.profesores">
+                        {{profesor.nombre}}
+                    </option>
+                </select>
+                <br>
+                <h2>Estudiantes: </h2>
+                <br>
+                <select id=listestudaintes data-placeholder="Escoja los estudaintes..." style="width:350px; height: 60px; display:block; margin:auto;" multiple tabindex="2">
+                    <option value="" *ngFor="let estudiante of curso.estudiantes">
+                        {{estudiante.nombre}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <div>
+            <form class="box">
+                <h1 style="text-align: center;">Login plataforma</h1>
+                <input type="text" placeholder="Ingrese su email" id="txtEmail" name="email" required [(ngModel)]="email">
+                <input type="password" placeholder="Ingrese su contraseña" id="txtContrasena" name="contrasena" required [(ngModel)]="contra">
+                <button type="button" (click) =  "login()">Iniciar Sesión</button>
+            </form>
+        </div>
+    </body>
+</html>

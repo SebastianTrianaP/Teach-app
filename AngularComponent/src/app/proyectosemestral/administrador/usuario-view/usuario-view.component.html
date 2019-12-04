@@ -1,0 +1,46 @@
+<html>
+    <body>
+        <h1 style="text-align: center;">Administrador del sistema</h1>
+        <h2 style="text-align: center;">Usuario</h2>
+        <div class="custom-padding">
+                <nav>
+                    <ul class="menu-area">
+                        <li><a  [routerLink]="['/administrador/listar-usuarios']">Lista</a></li>
+                        <li><a  [routerLink]="['/administrador/modificar-usuario']" [queryParams]="{id: usuario.id}">Modificar usuario</a></li>   <!--, employee.id]-->
+                        <li (click) = "eliminarUsuario()"><a>Eliminar usuario</a></li>
+                    </ul>
+                </nav>
+            </div>
+        <div class="box">
+                <!--<img style="display:block; margin:auto;"
+                src="assets/icons/waiting.gif"
+                alt="Please wait..."
+                *ngIf="!(employee && employee.id)"
+                /> -->
+            <div > <!-- *ngIf="employee && employee.id" -->
+                <table class="tabla">
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>{{usuario.email}} </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre</th>
+                        <td>{{usuario.nombre}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Apellidos</th>
+                        <td>{{usuario.apellidos}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Contraseña</th>
+                        <td>{{usuario.contra}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Rol</th>
+                        <td>{{usuario.rol}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

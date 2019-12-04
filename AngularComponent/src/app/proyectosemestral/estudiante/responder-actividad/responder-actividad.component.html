@@ -1,0 +1,13 @@
+<html>
+    <body>
+        <div>
+            <h1 style="text-align: center;">Responder actividad</h1>
+            <form class="box">
+              <label>Respuesta</label>
+                <textarea rows="10" cols="50" style="resize: none" [(ngModel)]="mensaje"></textarea>
+                <button type="submit" (click)="enviarRespuesta()">Enviar respuesta</button>
+                <button [routerLink]="['/estudiante/listar-misactividades']" [queryParams]="{id: idCurso, idEstudiante: estudiante.id}" type="button">Cancelar</button>
+            </form>
+        </div>
+    </body>
+</html>

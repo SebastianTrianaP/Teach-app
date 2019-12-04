@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <div>
+            <h1 style="text-align: center;">Crear nuevo curso</h1>
+            <form class="box">
+              <label for="txtNombre">Nombre: </label>
+              <input type="text" placeholder="Ingrese el nombre" id="txtNombre" [(ngModel)]="nombre" name="nombre" required>
+              <label>Profesores: </label>
+              <select id=listprofesores data-placeholder="Escoja los profesores..." [(ngModel)]="profesores" name="profesores" style="width:350px; height: 60px;" multiple tabindex="2">
+                <option [value]="profesor" *ngFor="let profesor of profesoresGeneral">
+                  {{profesor.nombre}}
+                </option>
+              </select>
+              <label>Estudiantes: </label>
+              <select id=listestudaintes data-placeholder="Escoja los estudaintes..." [(ngModel)]="estudiantes" name="estudiantes" style="width:350px; height: 60px;" multiple tabindex="2">
+                <option [value]="estudiante" *ngFor="let estudiante of estudiantesGeneral">
+                    {{estudiante.nombre}}
+                </option>
+              </select>
+              <button type="button"  (click) =  "crearCurso()">Crear nuevo usuario</button>
+              <button [routerLink]="['/administrador/listar-cursos']" type="button">Cancelar</button>
+            </form>
+        </div>
+    </body>
+</html>

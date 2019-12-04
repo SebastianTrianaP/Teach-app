@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 style="text-align: center;">Profesor</h1>
+        <h2 style="text-align: center;">Actividades</h2>
+        <div class="custom-padding">
+            <nav>
+                <ul class="menu-area">
+                    <li><a  [routerLink]="['/profesor/menu']" [queryParams]="{id: idProfe}">Menú profesor</a></li>
+                    <li><a  [routerLink]="['/profesor/crear-actividad']" [queryParams]="{id: curso.id}" >Crear nueva actividad</a></li> <!-- [queryParams]="{id: curso.id}-->
+                </ul>
+            </nav>
+        </div>
+        <div class="box">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Fecha de entrega</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let actividad of curso.actividades">
+                        <td>
+                            <a [routerLink]="['/profesor/ver-actividad']" [queryParams]="{id: actividad.id, idCurso: curso.id, idProfe: idProfe}">{{actividad.titulo}}</a> <!--[queryParams]="{idc: curso.id ,ida: actividades.id}"-->
+                        </td>
+                        <td>{{actividad.descripcion}}</td>
+                        <td>{{actividad.fechaEntrega}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

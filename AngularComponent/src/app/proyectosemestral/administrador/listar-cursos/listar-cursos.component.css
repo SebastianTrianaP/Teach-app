@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/13/43/wqLlvf.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1{
+    text-transform: uppercase;
+    font-weight: 500;
+    font: normal normal bold 40px arial;
+    color: #152a72;
+}
+h2{
+    text-transform: uppercase;
+    font-weight: 500;
+    font: normal normal bold 30px arial;
+    color: #152a72;
+}
+
+.menu-area li a{
+    text-decoration: none;
+    color: #123597;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    padding: 0 25px;
+    font: normal normal bold 20px arial;
+    line-height: 30px;
+    position: relative;
+    z-index: 1; 
+}
+
+.menu-area li a:hover{
+    background: #ffffff;
+    color: #123597;
+}
+
+.menu-area li{
+    list-style: none;
+    display: inline-block;
+}
+
+.custom-padding{
+    padding-top: 25px;
+}
+
+nav{
+    position: relative;
+    padding: 10px 20px 10px 10px;
+    text-align: center;
+    z-index: 1;
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+    margin: 0 auto;
+    width: calc(100% - 200px);
+}
+
+nav::before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 100%;
+    border-top: 10px solid #e0c3fc;
+    border-right: 10px solid #e0c3fc;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+nav::after{
+    position: absolute;
+    content: '';
+    right: 0;
+    top: 100%;
+    border-top: 10px solid #8ec5fc;
+    border-right: 10px solid #8ec5fc;
+    border-left: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.box{
+    width: 1150px;
+    padding: 40px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+}
+
+.box h1{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+    font: normal normal bold 40px arial;
+}
+
+table.tabla {
+  border: 1px solid #1C6EA4;
+  background-color: #EEEEEE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+table.tabla td, table.tabla th {
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
+table.tabla tbody td {
+  font-size: 13px;
+}
+table.tabla tr:nth-child(even) {
+  background: #D0E4F5;
+}
+table.tabla thead {
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}
+table.tabla thead th {
+  font-size: 15px;
+  font-weight: bold;
+  color: #FFFFFF;
+  border-left: 2px solid #D0E4F5;
+}
+table.tabla thead th:first-child {
+  border-left: none;
+}
+
+table.tabla tfoot td {
+  font-size: 14px;
+}
+table.tabla tfoot .links {
+  text-align: right;
+}
+table.tabla tfoot .links a{
+  display: inline-block;
+  background: #1C6EA4;
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+table.tabla th[scope=row]{
+  background: #1C6EA4;
+  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
+  border-bottom: 2px solid #444444;
+}

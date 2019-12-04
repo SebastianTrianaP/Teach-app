@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 style="text-align: center;">Estudiante</h1>
+        <h2 style="text-align: center;">Actividades</h2>
+        <div class="custom-padding">
+            <nav>
+                <ul class="menu-area">
+                    <li><a  [routerLink]="['/estudiante/menu']"  [queryParams]="{id: idEstudiante}">Menú estudiante</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="box">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Descripción</th>
+                        <th>Fecha de entrega</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let actividad of actividades">
+                        <td>
+                            <a [routerLink]="['/estudiante/responder-actividad']"  [queryParams]="{id: curso.id, idEstudiante: idEstudiante, idActividad: actividad.id}">{{actividad.titulo}}</a> <!--[queryParams]="{idc: curso.id ,ida: actividades.id}"-->
+                        </td>
+                        <td>{{actividad.descripcion}}</td>
+                        <td>{{actividad.fechaEntrega}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

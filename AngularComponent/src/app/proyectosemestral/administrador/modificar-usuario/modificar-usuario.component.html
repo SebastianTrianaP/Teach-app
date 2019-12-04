@@ -1,0 +1,39 @@
+<html>
+    <body>
+        <h1 style="text-align: center;">Modificar Usuario</h1>
+        <div class="box">
+                <!--<img style="display:block; margin:auto;"
+                src="assets/icons/waiting.gif"
+                alt="Please wait..."
+                *ngIf="!(employee && employee.id)"
+                /> -->
+            <div class="box"> <!-- *ngIf="employee && employee.id" -->
+
+                <form>
+                    <label for="txtNombre">Nombre: </label>
+                    <input type="text" placeholder="Ingrese el nombre" id="txtNombre" name="nombre" [(ngModel)]="usuario.nombre" required>
+                    <label for="txtApellidos">Apellidos: </label>
+                    <input type="text" placeholder="Ingrese los apellidos" id="txtApellidos" name="apellidos" [(ngModel)]="usuario.apellidos" required>
+                    <label for="txtEmail">Email: </label>
+                    <input type="text" placeholder="Ingrese el email" id="txtEmail" name="email" [(ngModel)]="usuario.email" required>
+                    <label for="txtContrasena">Contraseña: </label>
+                    <input type="text" placeholder="Ingrese la contraseña" id="txtContrasena" name="contrasena"  [(ngModel)]="usuario.contra" required>
+                    <label>Rol: </label>
+                    <div class="cambiolabel">
+                        <label class="container">Administrador
+                                <input type="radio" checked="checked" name="rol" [(ngModel)]="usuario.rol" value="Administrador">
+                        </label>
+                        <label class="container">Profesor
+                                <input type="radio" name="rol" [(ngModel)]="usuario.rol" value="Profesor">
+                        </label>
+                        <label class="container">Estudiante
+                                <input type="radio" name="rol" [(ngModel)]="usuario.rol" value="Estudiante">
+                        </label>
+                    </div>
+                    <button type="button" (click)="modificarUsuario()">Modificar usuario</button>
+                    <button  [routerLink]="['/administrador/ver-usuario']" [queryParams]="{id: usuario.id}"  type="button">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

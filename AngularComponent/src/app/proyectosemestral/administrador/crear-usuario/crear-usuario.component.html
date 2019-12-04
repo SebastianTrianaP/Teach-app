@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <div>
+            <h1 style="text-align: center;">Crear nuevo usuario</h1>
+            <form class="box">
+                <label for="txtNombre">Nombre: </label>
+                <input type="text" placeholder="Ingrese el nombre" id="txtNombre" name="nombre" [(ngModel)]="nombre" required>
+                <label for="txtApellidos">Apellidos: </label>
+                <input type="text" placeholder="Ingrese los apellidos" id="txtApellidos" [(ngModel)]="apellidos" name="apellidos" required>
+                <label for="txtEmail">Email: </label>
+                <input type="text" placeholder="Ingrese el email" id="txtEmail" [(ngModel)]="email" name="email" required>
+                <label for="txtContrasena">Contraseña: </label>
+                <input type="text" placeholder="Ingrese la contraseña" id="txtContrasena" [(ngModel)]="contra" name="contrasena" required>
+                <label>Rol: </label>
+                <div class="cambiolabel">
+                    <label class="container">Administrador
+                            <input type="radio" checked="checked" name="rol" [(ngModel)]="rol" value="Administrador">
+                    </label>
+                    <label class="container">Profesor
+                            <input type="radio" name="rol" [(ngModel)]="rol" value="Profesor">
+                    </label>
+                    <label class="container">Estudiante
+                            <input type="radio" name="rol" [(ngModel)]="rol" value="Estudiante">
+                    </label>
+                </div>
+                <button type="button" (click) =  "crearUsuario()" >Crear nuevo usuario</button>
+                <button [routerLink]="['/administrador/listar-usuarios']" type="button">Cancelar</button>
+            </form>
+        </div>
+    </body>
+</html>

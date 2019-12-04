@@ -1,0 +1,35 @@
+<html>
+    <body>
+        <h1>Profesor</h1>
+        <h2>Menú</h2>
+
+        <div class="custom-padding">
+          <nav>
+              <ul class="menu-area">
+                  <li><a (click)="logout()" >Logout</a></li>
+              </ul>
+          </nav>
+        </div>
+
+        <div class="box">
+                <h2>Cursos</h2>
+                <br>
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Codigo</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let curso of cursos"> <!---->
+                            <td>
+                              <a [routerLink]="['/profesor/listar-actividades']"  [queryParams]="{id: curso.id, idProfe: usuario.id}" >{{curso.id}}</a> <!-- [queryParams]="{id: curso.id}-->
+                            </td>
+                            <td>{{curso.nombre}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+        </div>
+    </body>
+</html>

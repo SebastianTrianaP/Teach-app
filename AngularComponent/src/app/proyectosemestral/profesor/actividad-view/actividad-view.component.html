@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <h1 style="text-align: center;">Profesor</h1>
+        <h2 style="text-align: center;">Actividad</h2>
+        <div class="custom-padding">
+            <nav>
+                <ul class="menu-area">
+                    <li><a  [routerLink]="['/profesor/listar-actividades']" [queryParams]="{id: curso.id, idProfe: idProfe}">Lista</a></li>
+                    <li><a  [routerLink]="['/profesor/modificar-actividad']" [queryParams]="{id: actividad.id, idCurso: curso.id}">Modificar actividad</a></li>  <!-- [queryParams]="{id: actividad.id}" -->
+                    <li (click) = "eliminarActividad()"><a>Eliminar actividad</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="box">
+                <!--<img style="display:block; margin:auto;"
+                src="assets/icons/waiting.gif"
+                alt="Please wait..."
+                *ngIf="!(employee && employee.id)"
+                /> -->
+            <div > <!-- *ngIf="employee && employee.id" -->
+                <table class="tabla">
+                    <tr>
+                        <th scope="row">Título</th>
+                        <td>{{actividad.titulo}} </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Descripción</th>
+                        <td>{{actividad.descripcion}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Fecha de entrega</th>
+                        <td>{{actividad.fechaEntrega}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

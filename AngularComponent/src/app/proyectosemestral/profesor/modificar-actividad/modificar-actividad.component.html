@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <div>
+            <h1 style="text-align: center;">Modificar actividad</h1>
+            <form class="box">
+                <label for="txtTitulo">Titulo: </label>
+                <input type="text" placeholder="Ingrese el titulo" id="txtTitulo" name="titulo"  [(ngModel)]="actividad.titulo" required>
+                <label for="txtDescripcion">Descripción: </label>
+                <input type="text" placeholder="Ingrese la descripción" id="txtDescripcion" name="descripcion" [(ngModel)]="actividad.descripcion" required>
+                <label >Fecha: </label>
+                <input type="date" name="fecha" [(ngModel)]="actividad.fechaEntrega" required>
+                <button type="button" (click)="modificar()">Modificar actividad</button>
+                <button [routerLink]="['/profesor/ver-actividad']" [queryParams]="{id: actividad.id, idCurso: curso.id}" type="button">Cancelar</button>
+            </form>
+        </div>
+    </body>
+</html>

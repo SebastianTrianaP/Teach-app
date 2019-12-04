@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 style="text-align: center;">Administrador del sistema</h1>
+        <h2 style="text-align: center;">Cursos</h2>
+        <div class="custom-padding">
+            <nav>
+                <ul class="menu-area">
+                    <li><a  [routerLink]="['/administrador/menu']">Menú administrador</a></li>
+                    <li><a  [routerLink]="['/administrador/crear-curso']">Crear nuevo curso</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="box">
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let curso of cursos">
+                        <td>
+                            <a [routerLink]="['/administrador/ver-curso']" [queryParams]="{id: curso.id}">{{curso.id}}</a> <!--, employee.id]-->
+                        </td>
+                        <td>{{curso.nombre}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
